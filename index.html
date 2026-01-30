@@ -1000,6 +1000,49 @@
             display: block;
         }
 
+        /* ===== 代表者挨拶 Section ===== */
+        .representative-section {
+            background-color: var(--bg-light);
+        }
+        .representative-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        .representative-img img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .representative-text h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .representative-text p {
+            font-size: 15px;
+            color: var(--text-dark);
+            line-height: 2;
+        }
+
+        @media (max-width: 768px) {
+            .representative-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .representative-img {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+        }
+
+
         /* ===== Responsive ===== */
         @media (max-width: 1200px) {
             .section {
@@ -1220,7 +1263,7 @@
     <section class="section usage-section" id="usage">
         <div class="section-header">
             <h2 class="section-title">こんなことで困っていませんか？</h2>
-            <p class="section-subtitle">トランクルームは特別なものではありません。日常のちょっとした「困った」を解決し、暮らしにゆとりを生みます。</p>
+            <p class="section-subtitle">「荷物が多く部屋が物置状態…」「家族が増えるから荷物を減らしたい、でも捨てたくない！」「引っ越しやリフォームで一時的に荷物を置きたい！」<br>そんなお悩みを、トランクルームが解決します。あなたの暮らしに、もう一部屋のゆとりを。</p>
         </div>
         <div class="usage-grid">
             <div class="usage-card fade-in">
@@ -1288,8 +1331,8 @@
                     <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
                 </div>
                 <div>
-                    <h3 class="trust-title">防犯カメラ24時間監視</h3>
-                    <p class="trust-description">複数の防犯カメラが敷地内を常時監視。夜間も明るい照明完備で、女性おひとりでも安心してご利用いただけます。</p>
+                    <h3 class="trust-title">徹底したセキュリティ体制</h3>
+                    <p class="trust-description">複数の防犯カメラによる24時間監視に加え、出入口は契約者様専用のセキュリティを導入。あなたの大切なものを守ります。</p>
                 </div>
             </div>
             <div class="trust-card fade-in">
@@ -1318,6 +1361,44 @@
                     <h3 class="trust-title">1ヶ月から契約OK</h3>
                     <p class="trust-description">短期のご利用も大歓迎。引越しやリフォームの一時保管など、必要な期間だけお使いいただけます。解約もスムーズです。</p>
                 </div>
+            </div>
+            <div class="trust-card fade-in">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div>
+                    <h3 class="trust-title">高品質な収納スペース</h3>
+                    <p class="trust-description">堅牢性・耐久性に優れた高品質なコンテナ・ガレージを採用。収納力・使いやすさも追求し、快適にご利用いただけます。</p>
+                </div>
+            </div>
+            <div class="trust-card fade-in">
+                <div class="trust-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V6h5.17l2 2H20v10z"/></svg>
+                </div>
+                <div>
+                    <h3 class="trust-title">えらべる豊富なサイズ</h3>
+                    <p class="trust-description">段ボール箱から家財一式、お車まで。お客様の用途や荷物の量に合わせて、最適なサイズ・タイプをお選びいただけます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 代表者ごあいさつ Section -->
+    <section class="section representative-section">
+        <div class="section-header">
+            <h2 class="section-title">代表者ごあいさつ</h2>
+        </div>
+        <div class="representative-content fade-in">
+            <div class="representative-img">
+                <img src="images/Gemini_Generated_Image_6zuygk6zuygk6zuy.png" alt="代表者">
+            </div>
+            <div class="representative-text">
+                <h3>大切な資産と想いを、<br>最適な形で未来へつなぐパートナー。</h3>
+                <p>
+                    私たちの仕事は、人生の中において、最も高額で、大切な資産である不動産の購入や売却をするお客様のパートナーとなることです。<br>
+                    そして、お客様の資産形成や維持のために、正確な情報を提供し、正しい判断のもと、不動産の購入や売却を行うベストな選択肢をご提案することです。<br>
+                    そのために、お客様の長きにわたる良きパートナーで在りたいと思います。それが私たちが存在する理由です。
+                </p>
             </div>
         </div>
     </section>
