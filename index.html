@@ -702,6 +702,155 @@
             font-weight: 600;
         }
 
+        /* ===== 配置図ポップアップ ===== */
+        .area-title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .area-title-wrapper .store-area-title {
+            margin-bottom: 0;
+        }
+
+        .layout-btn {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 20px rgba(29, 32, 136, 0.2);
+            white-space: nowrap;
+        }
+
+        .layout-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .layout-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* モーダル */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 95vw;
+            max-height: 90vh;
+            background: var(--bg-white);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: var(--primary);
+            color: #FFFFFF;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #FFFFFF;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: opacity 0.3s;
+        }
+
+        .modal-close:hover {
+            opacity: 0.7;
+        }
+
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+            max-height: calc(90vh - 60px);
+        }
+
+        .modal-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal-image-item {
+            text-align: center;
+        }
+
+        .modal-image-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow);
+        }
+
+        .modal-image-caption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .area-title-wrapper {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 15px;
+            }
+
+            .layout-btn {
+                font-size: 13px;
+                padding: 10px 14px;
+            }
+
+            .modal-title {
+                font-size: 16px;
+            }
+        }
+
         /* ===== ご利用の流れ Section ===== */
         .flow-section {
             background-color: var(--bg-light);
@@ -1477,7 +1626,17 @@
 
         <!-- 北区 -->
         <div class="store-area" id="kita-ku">
-            <h3 class="store-area-title">岡山市北区エリア</h3>
+            <div class="area-title-wrapper">
+                <h3 class="store-area-title">岡山市北区エリア</h3>
+                <button
+                    type="button"
+                    class="layout-btn"
+                    data-modal-title="岡山市北区エリアの配置図"
+                    data-images='[{"src":"images/北長瀬店2601.jpg","caption":"北区北長瀬店"},{"src":"images/管理Excelシート（Theガレージボックス神田町）.jpg","caption":"北区神田町店"},{"src":"images/管理Excelシート（Theガレージボック北区白石）251221.jpg","caption":"北区白石店"},{"src":"images/管理Excelシート（Theガレージボック北区高柳東町）.jpg","caption":"北区高柳東町店"}]'>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h3.5a1 1 0 0 1 .8.4l1.4 1.9A1 1 0 0 0 11.5 6H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5zm5 5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 7-3.8-5.1a1 1 0 0 0-1.6 0L9 17h9z"/></svg>
+                    配置図で見る
+                </button>
+            </div>
             <div class="store-grid">
                 <div class="store-card fade-in">
                     <div class="store-image">
@@ -1550,7 +1709,17 @@
 
         <!-- 中区 -->
         <div class="store-area" id="naka-ku">
-            <h3 class="store-area-title">岡山市中区エリア</h3>
+            <div class="area-title-wrapper">
+                <h3 class="store-area-title">岡山市中区エリア</h3>
+                <button
+                    type="button"
+                    class="layout-btn"
+                    data-modal-title="岡山市中区エリアの配置図"
+                    data-images='[{"src":"images/西川原2601.jpg","caption":"中区西川原店"},{"src":"images/原尾島2601.jpg","caption":"中区原尾島店"}]'>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h3.5a1 1 0 0 1 .8.4l1.4 1.9A1 1 0 0 0 11.5 6H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5zm5 5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 7-3.8-5.1a1 1 0 0 0-1.6 0L9 17h9z"/></svg>
+                    配置図で見る
+                </button>
+            </div>
             <div class="store-grid">
                 <div class="store-card fade-in">
                     <div class="store-image">
@@ -1610,7 +1779,17 @@
 
         <!-- 南区 -->
         <div class="store-area" id="minami-ku">
-            <h3 class="store-area-title">岡山市南区エリア</h3>
+            <div class="area-title-wrapper">
+                <h3 class="store-area-title">岡山市南区エリア</h3>
+                <button
+                    type="button"
+                    class="layout-btn"
+                    data-modal-title="岡山市南区エリアの配置図"
+                    data-images='[{"src":"images/最新空室状況（GARAGE HOUSE 202Ⅰ南区泉田店）2512.jpg","caption":"GARAGE HOUSE 202Ⅰ 南区泉田店"},{"src":"images/管理Excelシート（GARAGE HOUSE202Ⅱ）.jpg","caption":"GARAGE HOUSE 202Ⅱ 南区泉田店"},{"src":"images/管理Excelシート（GARAGE HOUSE202Ⅲ）.jpg","caption":"GARAGE HOUSE 202Ⅲ 南区泉田店"}]'>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5a2 2 0 0 1 2-2h3.5a1 1 0 0 1 .8.4l1.4 1.9A1 1 0 0 0 11.5 6H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5zm5 5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 7-3.8-5.1a1 1 0 0 0-1.6 0L9 17h9z"/></svg>
+                    配置図で見る
+                </button>
+            </div>
             <div class="store-grid">
                 <div class="store-card fade-in">
                     <div class="store-image">
@@ -1793,6 +1972,18 @@
         <a href="#contact">無料で相談する</a>
     </div>
 
+    <div class="modal-overlay" id="layoutModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="layoutModalTitle">
+            <div class="modal-header">
+                <h4 class="modal-title" id="layoutModalTitle">配置図</h4>
+                <button type="button" class="modal-close" id="layoutModalClose" aria-label="閉じる">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-images" id="layoutModalImages"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Mobile menu toggle
         function toggleMenu() {
@@ -1865,6 +2056,51 @@
                 floatingCta.classList.add('visible');
             } else {
                 floatingCta.classList.remove('visible');
+            }
+        });
+
+        // Layout modal
+        const layoutModal = document.getElementById('layoutModal');
+        const layoutModalTitle = document.getElementById('layoutModalTitle');
+        const layoutModalImages = document.getElementById('layoutModalImages');
+        const layoutModalClose = document.getElementById('layoutModalClose');
+
+        function closeLayoutModal() {
+            layoutModal.classList.remove('active');
+            layoutModal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.layout-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const title = button.dataset.modalTitle || '配置図';
+                const images = JSON.parse(button.dataset.images || '[]');
+
+                layoutModalTitle.textContent = title;
+                layoutModalImages.innerHTML = images.map(image => `
+                    <div class="modal-image-item">
+                        <img src="${image.src}" alt="${image.caption}">
+                        <p class="modal-image-caption">${image.caption}</p>
+                    </div>
+                `).join('');
+
+                layoutModal.classList.add('active');
+                layoutModal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        layoutModalClose.addEventListener('click', closeLayoutModal);
+
+        layoutModal.addEventListener('click', (event) => {
+            if (event.target === layoutModal) {
+                closeLayoutModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && layoutModal.classList.contains('active')) {
+                closeLayoutModal();
             }
         });
     </script>
